@@ -18,10 +18,13 @@ namespace App\Http\Controllers;
 class LoginController extends Controller
 {
 
+    function index()
+    {
+        return view("login");
+    }
+
     function login()
     {
-        return time();
-
-
+        return view("login");
     }
 }

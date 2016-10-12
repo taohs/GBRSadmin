@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/auth/login", "LoginController@")
+Route::get("/login", "LoginController@login");

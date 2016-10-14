@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
 /**
  * Created by PhpStorm.
  * User: taohs
@@ -20,6 +21,14 @@ class LoginController extends Controller
 
     function index()
     {
+        // Session::put("key",1);
+        // Session::save();
+        echo Session::get("key");
+//        session_start();
+//        $request->session()->set("key", 1);
+//        echo $request->session->get("key");
+//        $_SESSION["key"] = 1;
+//        echo $_SESSION["key"];
         return view("login");
     }
 

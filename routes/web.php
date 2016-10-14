@@ -20,6 +20,6 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'LoginController@index');
 Route::get('/home', 'HomeController@index');
 

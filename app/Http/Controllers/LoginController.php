@@ -23,12 +23,14 @@ class LoginController extends Controller
     {
         // Session::put("key",1);
         // Session::save();
-        echo Session::get("key");
+        // echo Session::get("key");
 //        session_start();
 //        $request->session()->set("key", 1);
 //        echo $request->session->get("key");
 //        $_SESSION["key"] = 1;
 //        echo $_SESSION["key"];
+        Session::put("key","wocao");
+        echo Session::get("key");
         return view("login");
     }
 

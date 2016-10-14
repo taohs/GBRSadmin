@@ -10,6 +10,7 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/store') }}">
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}
+<input type="hidden" name="id" value="{{$user->id}}">
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Name</label>

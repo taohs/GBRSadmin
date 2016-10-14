@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\CreateUser;
+use App\Http\Requests\StoreUser;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
@@ -24,8 +26,7 @@ class HomeController extends Controller
         return view("admin.list", ['users' => $users]);
     }
 
-    function actionCreate(Request $request) {
-        var_dump($request->user());
+    function actionCreate() {
         return view('admin.form');
     }
 
@@ -34,13 +35,8 @@ class HomeController extends Controller
         return view('admin.item', ['user' => User::findOrFail($id) ]);    
     }
 
-    function actionStore(Request $request){
-        var_dump($request->input('name'));
-        $validate = $this->validate($request, [
-            'name' => 'required|unique:users|max:255',
-            'email' => 'required|email'
-        ]); 
-
+    function actionStore(StoreUser $request){
+        
 
     }
 

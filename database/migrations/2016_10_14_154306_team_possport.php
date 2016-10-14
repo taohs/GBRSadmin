@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdminsTable extends Migration
+class TeamPossport extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,7 @@ class CreateAdminsTable extends Migration
      */
     public function up()
     {
-        Schema::create('admins', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-            $table->string("name", 60)->unique();
-            $table->string("password", 60);
-        });
+        //
     }
 
     /**
@@ -28,6 +23,6 @@ class CreateAdminsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admins');
+        //
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Organizer;
+namespace App\Http\Controllers\Game;
 
 use Illuminate\Http\Request;
 
@@ -9,10 +9,11 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    //管理员界面
+    //
+    // 管理员界面
     function actionIndex()
     {
-
+         
     }
 
     function actionList()
@@ -21,13 +22,12 @@ class HomeController extends Controller
 
     function actionEdit()
     {
-
+    
     }
 
     function actionView()
     {
-
+    
     }
 
-   
 }

@@ -18,12 +18,60 @@
 //Route::get("/login", "LoginController@index");
 //Route::post("/login", "LoginController@login");
 
+/**
+ * --------
+ * ignore register
+ * --------
+ */
 Auth::routes();
+// Route::get('/register', 'LoginController@index');
 
 Route::get('/', 'LoginController@index');
 Route::get('/home', 'HomeController@index');
 
-// Route::get('/team/home', 'Team\HomeController@actionIndex');
+/*
+ * -------------------------------------------------
+ * Admin
+ * ------------------------------------------------
+ */
+Route::group(['prefix' => 'admin'], function() {
+    Route::any('create', 'Admin\HomeController@actionCreate');
+    Route::get('/', 'Admin\HomeController@actionList');
+    Route::get('/list', 'Admin\HomeController@actionList');
+    Route::match(['get', 'post', 'put', 'patch', 'delete'], 'item/{id}', 'Admin\HomeController@actionItem');
+    Route::get('view/{id}', 'Admin\HomeController@actionView');
+    Route::put('store', 'Admin\HomeController@actionStore');
+});
+/*
+ * ----------------
+ * Game
+ * ---------------
+ */
+Route::group(['prefix' => 'game'], function() {
+    Route::get('/home', 'Game\HomeController@actionIndex');
+});
+Route::group(['prefix' => 'events'], function() {
+    Route::get('/home', 'Events\HomeController@actionIndex');
+});
+Route::group(['prefix' => 'oganizer'], function() {
+    Route::get('/home', 'Oganizer\HomeController@actionIndex');
+});
+
+
+/*
+ * -----------
+ * Team
+ * ----------
+ */
+Route::group(['prefix' => 'school'], function() {
+    Route::get('/home', 'Game\HomeController@actionIndex');
+});
 Route::group(['prefix' => 'team'], function() {
     Route::get('/home', 'Team\HomeController@actionIndex');
 });
+Route::group(['prefix' => 'member'], function() {
+    Route::get('/home', 'Member\HomeController@actionIndex');
+});
+
+
+

@@ -9,8 +9,25 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    //
-    function actionIndex(){
-        echo 1; 
+    //管理员界面
+    function actionIndex()
+    {
+
     }
+
+    function actionList()
+    {
+    }
+
+    function actionEdit()
+    {
+
+    }
+
+    function actionView()
+    {
+
+    }
+
+
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AdminUsers extends Migration
+class GameItem extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +14,6 @@ class AdminUsers extends Migration
     public function up()
     {
         //
-        Schema::create('admin_user', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string("username")->index();
-            $table->string('email')->index();
-            $table->timestamp('created_at')->nullable();
-        });
- 
     }
 
     /**
@@ -31,6 +24,5 @@ class AdminUsers extends Migration
     public function down()
     {
         //
-        Schema::drop("admin_user");
     }
 }
